@@ -1,8 +1,33 @@
 class ArticlesController < ApplicationController
+    
+    def index
+        @articles = Article.all
+    end
+    
     def new
         @article = Article.new
     end
     
+    def edit
+        if Article.exists?(id: params[:id] )
+            @article = Article.find(params[:id])
+        else
+            flash[:notice] = "Article not found"
+            redirect_to article_new
+        end
+    end
+    
+    def update
+        @article = Article.find(params[:id])
+        
+        if @article.update(  article_params )
+            flash[:notice] = "Article was successfully updated.."
+            redirect_to article_path(@article)
+        else
+            flash[:notice] = "Update has failed"
+            render 'edit'
+        end
+    end
     
     def create
         @article = Article.new(article_params)
@@ -16,7 +41,12 @@ class ArticlesController < ApplicationController
     end
     
     def show
-        @article = Article.find(params[:id])
+        if Article.exists?(id: params[:id] )
+            @article = Article.find(params[:id])
+        else
+            flash[:notice] = "Article not found"
+            redirect_to new_article_path
+        end
     end
     
     private 
