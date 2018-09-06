@@ -1,0 +1,68 @@
+$navbar-default-bg: #111111;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.myContainer{
+    min-height: 428px;
+}
+#logo{
+    float: left;
+    font-size: 21px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+.row{
+     margin-left: 0px; 
+     margin-right: 0px; 
+}
+.navbar-nav > li > a{
+    color:#fff !important;
+}
+
+.center{
+    text-align: center;
+    background-image: url(/assets/lonely-warrior2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    /* background-position: -22px -18px; */
+    color: white;
+}
+
+footer{
+    background-color:black;
+}
+
+.main-container{
+    min-height: 619px;
+}
+.footer-cp{
+    padding: 20px 91px;
+    
+}
+.footer-cp p{
+    color: white;
+    font-weight: bold;
+}
+
+.footer-sections{
+        height: 129px;
+    padding: 1px 104px;
+    background-color: #3d3838;
+}
+
+.footer-section h3{
+    color:white;
+    font-size: 20px;
+}
+
+.footer-section li a{
+    color:white;
+}
+
+.footer-section ul{
+     padding: 0;   
+}
