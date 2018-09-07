@@ -23,6 +23,10 @@ $navbar-default-bg: #111111;
 }
 
 .center{
+    text-align:center;
+}
+
+.myJumb{
     text-align: center;
     background-image: url(/assets/lonely-warrior2.jpg);
     background-size: cover;
@@ -65,4 +69,20 @@ footer{
 
 .footer-section ul{
      padding: 0;   
+}
+
+.article-action{
+    margin-top: 20px;
+    border-top: 1px solid lightgrey;
+    padding-top: 5px;
+}
+
+.article-body{
+    margin-top: 18px;
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.article-title{
+    border-bottom: 1px solid lightgrey;
 }
