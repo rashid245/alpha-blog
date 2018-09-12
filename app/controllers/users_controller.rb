@@ -19,8 +19,33 @@ class UsersController < ApplicationController
       end
    end
    
+   def edit
+      if User.exists?(id: params[:id] )
+            @user = set_user
+        else
+            flash[:notice] = "User does not exist"
+            redirect_to articles_path
+      end
+   end
+   
+   def update
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+         flash[:success] = @user.username + ", you have successfully updated your account"   
+         redirect_to articles_path
+      else
+         flash[:notice] = "Something went wrong"
+         render 'edit'
+      end
+   end
+   
    private 
       def user_params
          params.require(:user).permit(:username, :email, :password)
+      end
+      def set_user
+            if User.exists?(id: params[:id] )
+                @user = User.find(params[:id])
+            end
       end
 end
